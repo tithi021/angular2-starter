@@ -1,4 +1,4 @@
-System.register(['angular2/core', './courses.component', './click-me.component'], function(exports_1, context_1) {
+System.register(['angular2/core', './courses.component', './click-me.component', './hero-form.component', 'angular2/router', './hero-list.component', './crisis-list.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './courses.component', './click-me.component']
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, courses_component_1, click_me_component_1;
+    var core_1, courses_component_1, click_me_component_1, hero_form_component_1, router_1, hero_list_component_1, crisis_list_component_1;
     var AppComponent;
     return {
         setters:[
@@ -22,8 +22,21 @@ System.register(['angular2/core', './courses.component', './click-me.component']
             },
             function (click_me_component_1_1) {
                 click_me_component_1 = click_me_component_1_1;
+            },
+            function (hero_form_component_1_1) {
+                hero_form_component_1 = hero_form_component_1_1;
+            },
+            function (router_1_1) {
+                router_1 = router_1_1;
+            },
+            function (hero_list_component_1_1) {
+                hero_list_component_1 = hero_list_component_1_1;
+            },
+            function (crisis_list_component_1_1) {
+                crisis_list_component_1 = crisis_list_component_1_1;
             }],
         execute: function() {
+            router_1.RouteConfig, router_1.ROUTER_DIRECTIVES;
             AppComponent = (function () {
                 function AppComponent() {
                     this.story = { id: 100, name: 'Hello! Great you run your angular2 app. ' };
@@ -31,9 +44,13 @@ System.register(['angular2/core', './courses.component', './click-me.component']
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: '<h1>{{story.name}}</h1><courses></courses><click-me></click-me>',
-                        directives: [courses_component_1.CoursesComponent, click_me_component_1.ClickMeComponent]
-                    }), 
+                        template: "<h1>{{story.name}}</h1><courses></courses><click-me></click-me><hero-form></hero-form>\n\t\t<h1>Component Router</h1>\n\t    <nav>\n\t      <a [routerLink]=\"['CrisisCenter']\">Crisis Center</a>\n\t      <a [routerLink]=\"['Heroes']\">Heroes</a>\n\t    </nav>\n\t    <router-outlet></router-outlet>\n\t",
+                        directives: [courses_component_1.CoursesComponent, click_me_component_1.ClickMeComponent, hero_form_component_1.HeroFormComponent, router_1.ROUTER_DIRECTIVES]
+                    }),
+                    router_1.RouteConfig([
+                        { path: '/crisis-center', name: 'CrisisCenter', component: crisis_list_component_1.CrisisListComponent },
+                        { path: '/heros', name: 'Heroes', component: hero_list_component_1.HeroListComponent }
+                    ]), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
                 return AppComponent;

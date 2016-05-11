@@ -2,8 +2,16 @@
 <html>
 <head>
 	<title></title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	 <!-- 1. Load libraries -->
     <!-- IE required polyfills, in this exact order -->
+    <!-- <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+      <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">  
+
     <script src="node_modules/es6-shim/es6-shim.min.js"></script>
     <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
     <script src="node_modules/angular2/es6/dev/src/testing/shims_for_IE.js"></script>   
@@ -13,7 +21,8 @@
     <script src="node_modules/rxjs/bundles/Rx.js"></script>
     <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
 
-     <!-- 2. Configure SystemJS -->
+    <script type="text/javascript" src="node_modules/angular2/bundles/router.dev.js"></script>
+
     <script>
       System.config({
         transpiler: 'typescript',
